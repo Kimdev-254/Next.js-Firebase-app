@@ -1,13 +1,13 @@
-// src/pages/dashboard.js
 import ProtectedRoute from "../components/ProtectedRoute";
-import Dashboard from "../components/Dashboard";
+import DashboardContent from "../components/Dashboard";
+import Layout from "components/_layout";
 
 const DashboardPage = () => {
     return (
         <ProtectedRoute>
-            <Layout>
-                <Dashboard />
-            </Layout>
+
+            <DashboardContent />
+
         </ProtectedRoute>
     );
 };
