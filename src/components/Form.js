@@ -321,7 +321,7 @@ const Form = () => {
           <div className="mb-4">
             <label htmlFor="upload-file" className="block text-sm font-medium">
               {" "}
-              Add file/draft(optional)
+              Add anyfile/format/draft(optional)
             </label>
             <div className="bg-foreground mt-2 border-2 grid-cols-2 border-dashed border-border rounded-md p-6">
               <div className="flex justify-center">

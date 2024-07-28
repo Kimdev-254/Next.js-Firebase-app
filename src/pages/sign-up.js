@@ -25,8 +25,8 @@ const Login = () => {
 
   return (
     <div className="max-w-md mx-auto mt-8">
-      <h2 className="text-2xl font-semibold mb-4">Login Page</h2>
       <form onSubmit={handleLogin} className="space-y-4">
+        <h2 className="text-2xl font-semibold mb-4">Login Page</h2>
         <div>
           <label
             htmlFor="email"
