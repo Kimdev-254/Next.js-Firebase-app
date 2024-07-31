@@ -1,17 +1,14 @@
 //  /src/pages/_app.js
-import Navigation from 'components/Navigation';
-import '../styles/globals.css';
+import "../styles/globals.css"
 
 function MyApp({ Component, pageProps }) {
-    return (
-        <>
-            <div>
-                <Navigation />
-                <Component {...pageProps} />;
-            </div>
-
-        </>
-    )
+  return (
+    <>
+      <div>
+        <Component {...pageProps} />;
+      </div>
+    </>
+  )
 }
 
-export default MyApp;
+export default MyApp

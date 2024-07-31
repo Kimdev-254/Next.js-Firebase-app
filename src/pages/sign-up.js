@@ -3,20 +3,34 @@ import { useState } from "react"
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth"
 import { auth } from "../config/firebaseConfig"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 const SignUp = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth)
+  const [errorMessage, setErrorMessage] = useState("")
   const router = useRouter()
 
   const handleSignUp = async (e) => {
     e.preventDefault()
+    setErrorMessage("") // Clear previous error message
+
     try {
       await createUserWithEmailAndPassword(email, password)
     } catch (e) {
-      console.error("Error signing up: ", e)
+      // Handle Firebase Auth errors
+      if (e.code === "auth/invalid-email") {
+        setErrorMessage("The email address is not valid.")
+      } else if (e.code === "auth/email-already-in-use") {
+        setErrorMessage("The email address is already in use.")
+      } else if (e.code === "auth/weak-password") {
+        setErrorMessage("The password is too weak.")
+      } else {
+        setErrorMessage("An unexpected error occurred. Please try again.")
+      }
+      console.error("Sign up error: ", e)
     }
   }
 
@@ -51,8 +65,14 @@ const SignUp = () => {
           >
             {loading ? "Signing Up..." : "Sign Up"}
           </button>
-          {error && <p className="text-red-500">{error.message}</p>}
+          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
         </form>
+        <p className="text-gray-400 mt-4">
+          Already have an account?{" "}
+          <Link href="/sign-in" className="text-indigo-500 hover:underline">
+            Sign in
+          </Link>
+        </p>
       </div>
     </div>
   )
