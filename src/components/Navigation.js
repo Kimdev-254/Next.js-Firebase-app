@@ -71,11 +71,6 @@ const Navigation = () => {
           <button className="text-muted-foreground hover:text-primary transform hover:scale-110 transition-transform duration-300 overflow-hidden">
             <i className="fa fa-bell" aria-hidden="true"></i>
           </button>
-          <Image
-            src="https://placehold.co/40x40"
-            alt="profile-picture"
-            className="h-8 w-8 rounded-full border border-muted transform hover:scale-110 transition-transform duration-300 overflow-hidden"
-          />
           <button
             className="md:hidden text-muted-foreground hover:text-primary"
             onClick={toggleMenu}
