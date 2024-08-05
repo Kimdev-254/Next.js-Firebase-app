@@ -1,6 +1,6 @@
-import Layout from "../components/_layout";
-import Form from "../components/Form";
-import Link from "next/link";
+import Layout from "../components/_layout"
+import Form from "../components/Form"
+import Link from "next/link"
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
