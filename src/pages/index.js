@@ -1,3 +1,4 @@
+import withAuth from "components/withAuth"
 import Layout from "../components/_layout"
 import Form from "../components/Form"
 import Link from "next/link"
@@ -14,4 +15,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default withAuth(Home)

@@ -40,9 +40,21 @@ const SignUp = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <div className="bg-gray-800 p-10 rounded-lg shadow-xl w-96">
-        <h1 className="text-white text-2xl mb-5">Sign Up</h1>
+    <div
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative"
+      style={{
+        backgroundImage: "url('/kbg3.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div
+        className="absolute inset-0 bg-black opacity-50"
+        style={{ zIndex: 0 }}
+      ></div>
+      <div className="bg-gray-800 p-6 sm:p-10 rounded-lg shadow-xl w-full max-w-md relative z-10">
+        <h1 className="text-white text-2xl mb-5 text-center">Sign Up</h1>
         <form onSubmit={handleSignUp} className="space-y-4">
           <input
             type="email"
@@ -60,14 +72,16 @@ const SignUp = () => {
           />
           <button
             type="submit"
-            className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500"
+            className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500 transition duration-200"
             disabled={loading}
           >
             {loading ? "Signing Up..." : "Sign Up"}
           </button>
-          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+          {errorMessage && (
+            <p className="text-red-500 text-center">{errorMessage}</p>
+          )}
         </form>
-        <p className="text-gray-400 mt-4">
+        <p className="text-gray-400 mt-4 text-center">
           Already have an account?{" "}
           <Link href="/sign-in" className="text-indigo-500 hover:underline">
             Sign in

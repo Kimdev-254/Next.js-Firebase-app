@@ -163,7 +163,9 @@ const Form = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-medium">Cover photo</label>
+            <label className="block text-sm font-medium">
+              Cover photo(optional)
+            </label>
             <div className="mt-2 border-2 grid-cols-2 border-dashed border-border rounded-md p-6">
               <div className="flex justify-center">
                 <label

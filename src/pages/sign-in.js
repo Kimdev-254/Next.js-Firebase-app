@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth"
 import { auth } from "../config/firebaseConfig"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 
 const SignIn = () => {
   const [email, setEmail] = useState("")
@@ -26,9 +27,21 @@ const SignIn = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <div className="bg-gray-800 p-10 rounded-lg shadow-xl w-96">
-        <h1 className="text-white text-2xl mb-5">Sign In</h1>
+    <div
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative"
+      style={{
+        backgroundImage: "url('/kbg3.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div
+        className="absolute inset-0 bg-black opacity-50"
+        style={{ zIndex: 0 }}
+      ></div>
+      <div className="bg-gray-800 p-6 sm:p-10 rounded-lg shadow-xl w-full max-w-md relative z-10">
+        <h1 className="text-white text-2xl mb-5 text-center">Sign In</h1>
         <form onSubmit={handleSignIn} className="space-y-4">
           <input
             type="email"
@@ -46,13 +59,19 @@ const SignIn = () => {
           />
           <button
             type="submit"
-            className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500"
+            className="w-full p-3 bg-indigo-600 rounded text-white hover:bg-indigo-500 transition duration-200"
             disabled={loading}
           >
             {loading ? "Signing In..." : "Sign In"}
           </button>
-          {error && <p className="text-red-500">{error.message}</p>}
+          {error && <p className="text-red-500 text-center">{error.message}</p>}
         </form>
+        <p className="text-gray-400 mt-4 text-center">
+          Don&apos;t have an account?{" "}
+          <Link href="/sign-up" className="text-indigo-500 hover:underline">
+            Sign up
+          </Link>
+        </p>
       </div>
     </div>
   )
