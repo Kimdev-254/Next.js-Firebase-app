@@ -268,7 +268,7 @@ const Form = () => {
           </div>
           <div className="mb-4">
             <label htmlFor="message" className="block text-sm font-medium">
-              Message
+              Additional Information(optional)
             </label>
             <textarea
               id="message"
@@ -345,7 +345,7 @@ const Form = () => {
         </div>
         <button
           type="submit"
-          className="bg-teal-500 text-white font-serif py-2 px-4 rounded hover:bg-teal-700 transition duration-300"
+          className="bg-teal-500 text-white font-serif py-2 px-4 rounded hover:bg-black transition duration-300"
         >
           Submit
         </button>

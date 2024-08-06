@@ -28,7 +28,7 @@ const SignIn = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative"
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 relative"
       style={{
         backgroundImage: "url('/kbg3.jpg')",
         backgroundSize: "cover",
@@ -40,8 +40,11 @@ const SignIn = () => {
         className="absolute inset-0 bg-black opacity-50"
         style={{ zIndex: 0 }}
       ></div>
+      <h1 className="text-white text-4xl font-serif font-bold mb-8 text-center relative z-10">
+        Get Your Report for Just Ksh1000 Today!
+      </h1>
       <div className="bg-gray-800 p-6 sm:p-10 rounded-lg shadow-xl w-full max-w-md relative z-10">
-        <h1 className="text-white text-2xl mb-5 text-center">Sign In</h1>
+        <h2 className="text-white text-2xl mb-6 text-center">Login</h2>
         <form onSubmit={handleSignIn} className="space-y-4">
           <input
             type="email"

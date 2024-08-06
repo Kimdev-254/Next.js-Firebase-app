@@ -41,7 +41,7 @@ const SignUp = () => {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative"
+      className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 relative"
       style={{
         backgroundImage: "url('/kbg3.jpg')",
         backgroundSize: "cover",
@@ -53,8 +53,11 @@ const SignUp = () => {
         className="absolute inset-0 bg-black opacity-50"
         style={{ zIndex: 0 }}
       ></div>
+      <h1 className="text-white text-4xl font-bold font-serif mb-8 text-center relative z-10">
+        Get Your Report for Just Ksh 1000 Today!
+      </h1>
       <div className="bg-gray-800 p-6 sm:p-10 rounded-lg shadow-xl w-full max-w-md relative z-10">
-        <h1 className="text-white text-2xl mb-5 text-center">Sign Up</h1>
+        <h2 className="text-white text-2xl mb-6 text-center">Sign Up</h2>
         <form onSubmit={handleSignUp} className="space-y-4">
           <input
             type="email"
@@ -84,7 +87,7 @@ const SignUp = () => {
         <p className="text-gray-400 mt-4 text-center">
           Already have an account?{" "}
           <Link href="/sign-in" className="text-indigo-500 hover:underline">
-            Sign in
+            Login
           </Link>
         </p>
       </div>
